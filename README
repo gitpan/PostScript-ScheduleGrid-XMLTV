@@ -1,4 +1,4 @@
-PostScript-ScheduleGrid-XMLTV version 0.01, released November 11, 2011
+PostScript-ScheduleGrid-XMLTV version 0.02, released November 20, 2011
 
 
 This module uses PostScript::ScheduleGrid to create printable TV
@@ -36,10 +36,10 @@ DEPENDENCIES
 
 
 CHANGES
-    Here's what's new in version 0.01 of PostScript-ScheduleGrid-XMLTV:
+    Here's what's new in version 0.02 of PostScript-ScheduleGrid-XMLTV:
     (See the file "Changes" for the full revision history.)
 
-	- Initial release
+	- Improved documentation
 
 
 

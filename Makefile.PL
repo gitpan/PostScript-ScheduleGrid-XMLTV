@@ -33,7 +33,7 @@ my %WriteMakefileArgs = (
     "XMLTV" => "0.005",
     "namespace::autoclean" => 0
   },
-  "VERSION" => "0.01",
+  "VERSION" => "0.02",
   "test" => {
     "TESTS" => "t/*.t"
   }

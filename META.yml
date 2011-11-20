@@ -29,7 +29,7 @@ requires:
   perl: 5.010
 resources:
   repository: git://github.com/madsen/postscript-schedulegrid-xmltv.git
-version: 0.01
+version: 0.02
 x_Dist_Zilla:
   plugins:
     -

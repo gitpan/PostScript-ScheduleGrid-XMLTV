@@ -51,7 +51,7 @@
          "web" : "http://github.com/madsen/postscript-schedulegrid-xmltv"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
