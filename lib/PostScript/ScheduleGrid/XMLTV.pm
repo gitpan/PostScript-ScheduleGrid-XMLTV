@@ -20,8 +20,8 @@ package PostScript::ScheduleGrid::XMLTV;
 use 5.010;
 use Moose;
 
-our $VERSION = '0.02';
-# This file is part of PostScript-ScheduleGrid-XMLTV 0.02 (November 20, 2011)
+our $VERSION = '0.03';
+# This file is part of PostScript-ScheduleGrid-XMLTV 0.03 (October 12, 2013)
 
 use Moose::Util::TypeConstraints qw(duck_type);
 use MooseX::Types::DateTime (); # Just load coercions
@@ -35,6 +35,7 @@ use XMLTV 0.005 qw(best_name);
 # RECOMMEND PREREQ: Lingua::Preferred 0 (XMLTV uses to choose best language)
 
 use namespace::autoclean;
+
 
 #=====================================================================
 
@@ -274,9 +275,8 @@ PostScript::ScheduleGrid::XMLTV - Create a printable TV listings grid from XMLTV
 
 =head1 VERSION
 
-This document describes version 0.02 of
-PostScript::ScheduleGrid::XMLTV, released November 20, 2011
-as part of PostScript-ScheduleGrid-XMLTV version 0.02.
+This document describes version 0.03 of
+PostScript::ScheduleGrid::XMLTV, released October 12, 2013.
 
 =head1 SYNOPSIS
 
@@ -311,7 +311,8 @@ Then, you create a PostScript::ScheduleGrid::XMLTV object, call its
 C<parsefiles> and/or C<parse> methods to import the XMLTV data, and
 then call its C<grid> method to get a PostScript::ScheduleGrid object.
 You can then call the grid's C<output> method to save your printable
-listings in a file.
+listings in a PostScript file, or pass the grid to
+L<PostScript::Convert/psconvert> to generate a PDF or bitmap image.
 
 =head1 ATTRIBUTES
 
@@ -320,9 +321,12 @@ listings in a file.
 This is a hashref that allows you to override the default
 configuration for a channel.  The key is either the channel ID
 assigned by XMLTV (e.g. C<I10183.labs.zap2it.com>) or its default
-display name (e.g. S<C<285 EWTN>>).  The value is merged with the
-default channel settings when creating entries in the C<channels>
-hash.  Keys you might want to include are:
+display name (e.g. S<C<285 EWTN>>).  (If both keys are present, both
+are used, but the channel ID takes precedence over the display name.)
+The value is merged with the default channel settings when creating
+entries in the C<channels> hash.
+
+Keys you might want to include are:
 
 =over
 
@@ -496,6 +500,23 @@ chain method calls.
 
 PostScript::ScheduleGrid::XMLTV requires no configuration files or environment variables.
 
+=head1 DEPENDENCIES
+
+PostScript::ScheduleGrid::XMLTV requires
+L<PostScript::ScheduleGrid>,
+L<DateTime::Format::XMLTV>,
+L<Moose>,
+L<MooseX::Types>,
+L<MooseX::Types::DateTime>,
+and
+L<namespace::autoclean>.
+
+You also need L<XMLTV> (0.005 or later), which is not currently
+available from CPAN.  You can get it at L<http://xmltv.org>.
+
+You may also want to install L<Lingua::Preferred>, which XMLTV uses to
+handle language selection.
+
 =head1 INCOMPATIBILITIES
 
 None reported.
@@ -514,11 +535,11 @@ or through the web interface at
 L<< http://rt.cpan.org/Public/Bug/Report.html?Queue=PostScript-ScheduleGrid-XMLTV >>.
 
 You can follow or contribute to PostScript-ScheduleGrid-XMLTV's development at
-L<< http://github.com/madsen/postscript-schedulegrid-xmltv >>.
+L<< https://github.com/madsen/postscript-schedulegrid-xmltv >>.
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Christopher J. Madsen.
+This software is copyright (c) 2013 by Christopher J. Madsen.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

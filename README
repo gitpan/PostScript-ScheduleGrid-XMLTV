@@ -1,4 +1,4 @@
-PostScript-ScheduleGrid-XMLTV version 0.02, released November 20, 2011
+PostScript-ScheduleGrid-XMLTV version 0.03, released October 12, 2013
 
 
 This module uses PostScript::ScheduleGrid to create printable TV
@@ -21,7 +21,7 @@ DEPENDENCIES
 
   Package                       Minimum Version
   ----------------------------- ---------------
-  perl                           5.010
+  perl                           5.10.0
   DateTime::Format::XMLTV        
   Encode                         
   List::Util                     
@@ -36,7 +36,7 @@ DEPENDENCIES
 
 
 CHANGES
-    Here's what's new in version 0.02 of PostScript-ScheduleGrid-XMLTV:
+    Here's what's new in version 0.03 of PostScript-ScheduleGrid-XMLTV:
     (See the file "Changes" for the full revision history.)
 
 	- Improved documentation
@@ -45,7 +45,7 @@ CHANGES
 
 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Christopher J. Madsen.
+This software is copyright (c) 2013 by Christopher J. Madsen.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
